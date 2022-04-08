@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Spring Boot Cliente</title>
+</head>
+<body>
+<div>
+    <h1>Clientes y personas</h1>
+    <a href="/agregarEntrada">Registrar Auditores</a>
+    <br>
+    <a href="/verAuditores">Ver Auditores</a>
+    <br>
+    <br>
+
+    <a href="/registrarCliente">Registrar Clientes</a>
+    <br>
+    <a href="/registrarPersona">Registrar Persona</a>
+    <ul>
+        <div th:each="entry,status : ${cliente}">
+            <li>
+                <div></div>
+                <div>
+                    <div>
+                        <h4><span th:text="${entry.cedulaJuridica}">Cedula Juridica</span></h4>
+                    </div>
+                    <div class="tl-body">
+                        <p><span th:text="${entry.direccion}">Direccion</span></p>
+                    </div>
+                    <div class="tl-body">
+                        <p><span th:text="${entry.telefono}">Telefono</span></p>
+                    </div>
+
+                </div>
+
+            </li>
+        </div>
+    </ul>
+
+    <table th:each="entry1,status : ${persona}" th:border="2">
+        <tr>
+            <td> ID </td>
+            <td> NOMBRE </td>
+            <td> PRIMER APELLIDO </td>
+            <td> SEGUNDO APELLIDO </td>
+            <td> TELEFONO </td>
+            <td> CORREO </td>
+            <td> EDITAR </td>
+            <td> BORRAR </td>
+        </tr>
+    <tr>
+        <td th:text="${entry1.id}">  </td>
+        <td th:text="${entry1.nombre}">  </td>
+        <td th:text="${entry1.apellido1}">  </td>
+        <td th:text="${entry1.apellido2}">  </td>
+        <td th:text="${entry1.telefono}">  </td>
+        <td th:text="${entry1.correo}">  </td>
+        <td ><a th:href="@{/editarPersona/{id}(id=${entry1.id})}">Editar</a> </td>
+        <td ><a th:href="@{/borrarPersona/{id}(id=${entry1.id})}">Borrar</a> </td>
+
+    </tr>
+
+    </table>
+
+
+
+</div>
+</body>
+</html>

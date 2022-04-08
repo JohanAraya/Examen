@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Spring Boot Auditor</title>
+</head>
+<body>
+<div>
+    <h1>Auditorias</h1>
+    <a href="/agregarEntrada">Registrar Auditores</a>
+    <br>
+    <a href="/verAuditores">Ver Auditores</a>
+    <br>
+    <br>
+    <a href="/registrarCliente">Registrar Clientes</a>
+    <br>
+    <a href="/verClientes">Ver Clientes y personas asociadas</a>
+    <br>
+    <br>
+    <a href="/registrarPersona">Registrar Persona</a>
+    <br>
+    <a href="/registrarAuditoria">Registrar auditoría</a>
+
+
+    <table th:each="entry,status : ${auditoria}" th:border="2">
+        <tr>
+            <td> ID </td>
+            <td> NOMBRE </td>
+            <td> FECHA </td>
+            <td> CLIENTE </td>
+
+        </tr>
+        <tr>
+            <td th:text="${entry.id}">  </td>
+            <td th:text="${entry.auditoriaNombre}">  </td>
+            <td th:text="${entry.fecha}">  </td>
+            <td th:text="${entry.clienteVisita}">  </td>
+
+
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>

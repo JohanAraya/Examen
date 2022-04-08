@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar auditor</title>
+</head>
+<body>
+<h1>Editar</h1>
+<form action="#" th:action="@{/editar/{id}(id=${id})}" th:object="${auditorToEdit}" method="post">
+    <label for="nombre">Nombre</label>
+    <!--suppress ThymeleafVariablesResolveInspection -->
+    <input type="text" th:field="*{nombre}"  id="nombre"/>
+    <br>
+    <br>
+    <label for="apellido1">Primer apellido</label>
+    <!--suppress ThymeleafVariablesResolveInspection -->
+    <input type="text" th:field="*{apellido1}"  id="apellido1"/>
+    <br>
+    <br>
+    <label for="apellido2">Segundo apellido</label>
+    <!--suppress ThymeleafVariablesResolveInspection -->
+    <input type="text" th:field="*{apellido2}"  id="apellido2"/>
+    <br>
+    <br>
+    <label for="direccion">Direccion</label>
+    <!--suppress ThymeleafVariablesResolveInspection -->
+    <input type="text" th:field="*{direccion}"  id="direccion"/>
+    <br>
+    <br>
+    <label for="fechaNacimiento">Fecha de nacimiento</label>
+    <!--suppress ThymeleafVariablesResolveInspection -->
+    <input type="date" th:field="*{fechaNacimiento}"  id="fechaNacimiento"/>
+    <br>
+    <br>
+    <label for="telefono">Telefono</label>
+    <!--suppress ThymeleafVariablesResolveInspection -->
+    <input type="text" th:field="*{telefono}"  id="telefono"/>
+    <br>
+    <br>
+    <label for="correo">Correo</label>
+    <!--suppress ThymeleafVariablesResolveInspection -->
+    <input type="email" th:field="*{correo}"  id="correo"/>
+    <br>
+    <br>
+    <label for="disponibilidad">Disponibilidad</label>
+    <!--suppress ThymeleafVariablesResolveInspection -->
+    <input type="text" th:field="*{disponibilidad}"  id="disponibilidad"/>
+    <br>
+    <br>
+    <label for="especialidad">especialidad</label>
+    <!--suppress ThymeleafVariablesResolveInspection -->
+    <input type="text" th:field="*{especialidad}"  id="especialidad"/>
+    <br>
+    <br>
+    <label for="activo">Activo</label>
+    <input type="radio" id="activo" value="activo">
+    <br>
+    <br>
+    <label for="inactivo">Inactivo</label>
+    <input type="radio" id="inactivo" value="inactivo">
+    <br>
+    <br>
+    <input type="submit" value="Guardar Cambios">
+</form>
+</body>
+</html>

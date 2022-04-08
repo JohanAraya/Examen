@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro</title>
+</head>
+<body>
+<h1>Registrar Auditor</h1>
+<form action="#" th:action="@{/agregarEntrada}" th:object="${auditor}" method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" th:field="*{nombre}"  id="nombre"/>
+    <br>
+    <br>
+    <label for="apellido1">Primer Apellido</label>
+    <input type="text" th:field="*{apellido1}"  id="apellido1"/>
+    <br>
+    <br>
+    <label for="apellido2">Segundo Apellido</label>
+    <input type="text" th:field="*{apellido2}"  id="apellido2"/>
+    <br>
+    <br>
+    <label for="direccion">Direccion</label>
+    <input type="text" th:field="*{direccion}"  id="direccion"/>
+    <br>
+    <br>
+    <label for="fechaNacimiento">fecha de nacimiento</label>
+    <input type="date" th:field="*{fechaNacimiento}"  id="fechaNacimiento"/>
+    <br>
+    <br>
+    <label for="telefono">Telefono</label>
+    <input type="text" th:field="*{telefono}"  id="telefono"/>
+    <br>
+    <br>
+    <label for="correo">Correo Electronico</label>
+    <input type="email" th:field="*{correo}"  id="correo"/>
+    <br>
+    <br>
+    <label for="disponibilidad">Disponibilidad para viajar</label>
+    <input type="text" th:field="*{disponibilidad}"  id="disponibilidad"/>
+    <br>
+    <br>
+    <label for="especialidad">Especialidad</label>
+    <input type="text" th:field="*{especialidad}"  id="especialidad"/>
+    <br>
+    <br>
+    <input type="submit" value="Registrar Auditor">
+</form>
+</body>
+</html>
